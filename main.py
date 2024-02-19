@@ -4,8 +4,8 @@ import random
 pygame.init()
 # Game window specs
 pygame.display.set_caption('Flight Game GUI')
-SCREEN_WIDTH = 1000
-SCREEN_HEIGHT = 600
+SCREEN_WIDTH = 1100
+SCREEN_HEIGHT = 700
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 # Set FPS
 clock = pygame.time.Clock()
@@ -14,8 +14,9 @@ FPS = 60
 font = pygame.font.Font('asset/TarrgetAcademyItalic-qzmx.otf', 65)
 # Rendered layers
 background = pygame.image.load('asset/bg32.png')
-font_surface = font.render('Flying to target...', True, 'indianred3')
+font_surface = font.render('Flying to target...', True, 'lightslategrey')
 player = pygame.image.load('asset/player_1.png')
+HUD= pygame.image.load('asset/HUD.png')
 # Clouds
 cloud_1= pygame.image.load('asset/cloud1.png')
 cloud1_x_pos=1200
@@ -48,8 +49,7 @@ while running:
     if cloud2_x_pos < -1500: cloud2_x_pos = 1200
     screen.blit(cloud_2, (cloud2_x_pos, 300))
     cloud2_x_pos-=3
-    screen.blit(font_surface, (10, 530))
-
+    screen.blit(HUD, (0, 0))
 
 
     pygame.display.update()
