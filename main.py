@@ -19,12 +19,12 @@ def main_menu():
     pygame.mixer.music.play()
     pygame.mixer.music.set_volume(0.1)
     menu_background = pygame.image.load('asset/menu.png').convert_alpha()
-    running = True
-    while running:
+    main_running = True
+    while main_running:
         keys = pygame.key.get_pressed()
         for event in pygame.event.get() :
             if event.type == pygame.QUIT or keys[pygame.K_RETURN]:
-                running = False
+                main_running = False
         screen.blit(menu_background, (-30, 0))
 
         pygame.display.update()
