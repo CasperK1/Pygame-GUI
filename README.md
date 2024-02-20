@@ -1,1 +1,1 @@
-Possible prototype GUI for flight game project
+Possible prototype GUI for flight game project. WIP
