@@ -1,18 +1,36 @@
-import pygame
-import random
-
+import pygame, random
 pygame.init()
+
 # Game window specs
 pygame.display.set_caption('Flight Game GUI')
 programIcon = pygame.image.load('asset/player_animation/player_1.png')
-
 pygame.display.set_icon(programIcon)
 SCREEN_WIDTH = 1100
 SCREEN_HEIGHT = 800
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
 # Set FPS
 clock = pygame.time.Clock()
 FPS = 60
+
+def main_menu():
+    pygame.mixer.init()
+    pygame.mixer.music.load('asset/menu.mp3')
+    pygame.mixer.music.play()
+    pygame.mixer.music.set_volume(0.1)
+    menu_background = pygame.image.load('asset/menu.png').convert_alpha()
+    running = True
+    while running:
+        keys = pygame.key.get_pressed()
+        for event in pygame.event.get() :
+            if event.type == pygame.QUIT or keys[pygame.K_RETURN]:
+                running = False
+        screen.blit(menu_background, (-30, 0))
+
+        pygame.display.update()
+        clock.tick(FPS)
+
+main_menu()
 # Game Font
 font = pygame.font.Font('asset/TarrgetAcademyItalic-qzmx.otf', 65)
 # Rendered layers.
@@ -37,11 +55,10 @@ radar_frame_counter = 0
 
 # Clouds
 cloud_1 = pygame.image.load('asset/cloud1.png').convert_alpha()
-cloud_1_rect = cloud_1.get_rect(center= (1400, 100))
+cloud_1_rect = cloud_1.get_rect(center=(1400, 100))
 
 cloud_2 = pygame.image.load('asset/cloud4.png').convert_alpha()
 cloud2_x_pos = 1200
-
 
 # Game Loop
 running = True
@@ -56,7 +73,7 @@ while running:
             if event.key == pygame.K_DOWN:
                 turn_right_counter = 0
 
-
+    pygame.mixer.music.fadeout(5000)
     # Scroll for background
     for i in range(0, 2):
         screen.blit(background, (i * background.get_width() + bg_scroll, 0))
@@ -73,11 +90,11 @@ while running:
     # player movement
     keys = pygame.key.get_pressed()
     if keys[pygame.K_UP]:
-        player_coll.y -=5
+        player_coll.y -= 5
     elif keys[pygame.K_DOWN]:
-        player_coll.y +=5
+        player_coll.y += 5
     if player_coll.y <= 0:
-        player_coll.y= 0
+        player_coll.y = 0
     elif player_coll.y >= 400:
         player_coll.y = 400
     # player animation
