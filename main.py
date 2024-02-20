@@ -73,7 +73,7 @@ while running:
             if event.key == pygame.K_DOWN:
                 turn_right_counter = 0
 
-    pygame.mixer.music.fadeout(5000)
+    pygame.mixer.music.fadeout(8000)
     # Scroll for background
     for i in range(0, 2):
         screen.blit(background, (i * background.get_width() + bg_scroll, 0))
