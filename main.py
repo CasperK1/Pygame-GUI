@@ -17,6 +17,7 @@ FPS = 60
 font = pygame.font.Font('asset/TarrgetAcademyItalic-qzmx.otf', 65)
 # Rendered layers.
 background = pygame.image.load('asset/bg32.png').convert_alpha()
+bg_scroll = 0
 font_surface = font.render('Flying to target...', True, 'lightslategrey').convert_alpha()
 player = pygame.image.load('asset/player_animation/player_1.png').convert_alpha()
 player_left1 = pygame.image.load('asset/player_animation/player_1_TURNL2.png').convert_alpha()
@@ -41,7 +42,7 @@ cloud_1_rect = cloud_1.get_rect(center= (1400, 100))
 cloud_2 = pygame.image.load('asset/cloud4.png').convert_alpha()
 cloud2_x_pos = 1200
 
-scroll = 0
+
 # Game Loop
 running = True
 while running:
@@ -58,11 +59,11 @@ while running:
 
     # Scroll for background
     for i in range(0, 2):
-        screen.blit(background, (i * background.get_width() + scroll, 0))
-    scroll -= 1
+        screen.blit(background, (i * background.get_width() + bg_scroll, 0))
+    bg_scroll -= 1
     # Reset background
-    if abs(scroll) > background.get_width():
-        scroll = 0
+    if abs(bg_scroll) > background.get_width():
+        bg_scroll = 0
     # Cloud 1
     if cloud_1_rect.x < -300:
         cloud_1_rect.x = 1200
