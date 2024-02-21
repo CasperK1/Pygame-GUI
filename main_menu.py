@@ -3,10 +3,10 @@ pygame.init()
 def main_menu():
     window = window_specs.Window()
     pygame.mixer.init()
-    pygame.mixer.music.load('asset/menu.mp3')
+    pygame.mixer.music.load('assets/menu.mp3')
     pygame.mixer.music.play()
     pygame.mixer.music.set_volume(0.1)
-    menu_background = pygame.image.load('asset/menu.png').convert_alpha()
+    menu_background = pygame.image.load('assets/menu.png').convert_alpha()
     main_running = True
     while main_running:
         keys = pygame.key.get_pressed()

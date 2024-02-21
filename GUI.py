@@ -9,32 +9,32 @@ def gui_loop():
 
 
     # Game Font
-    font = pygame.font.Font('asset/TarrgetAcademyItalic-qzmx.otf', 65)
+    font = pygame.font.Font('assets/TarrgetAcademyItalic-qzmx.otf', 65)
     # Rendered layers.
-    background = pygame.image.load('asset/bg32.png').convert_alpha()
+    background = pygame.image.load('assets/bg32.png').convert_alpha()
     bg_scroll = 0
     #font_surface = font.render('Flying to target...', True, 'lightslategrey').convert_alpha()
-    player = pygame.image.load('asset/player_animation/player_1.png').convert_alpha()
-    player_left1 = pygame.image.load('asset/player_animation/player_1_TURNL2.png').convert_alpha()
-    player_left2 = pygame.image.load('asset/player_animation/player_1_TURNL.png').convert_alpha()
+    player = pygame.image.load('assets/player_animation/player_1.png').convert_alpha()
+    player_left1 = pygame.image.load('assets/player_animation/player_1_TURNL2.png').convert_alpha()
+    player_left2 = pygame.image.load('assets/player_animation/player_1_TURNL.png').convert_alpha()
     turn_left = [player_left1, player_left2]
     turn_left_counter = 0
-    player_right1 = pygame.image.load('asset/player_animation/player_1_TURNR2.png').convert_alpha()
-    player_right2 = pygame.image.load('asset/player_animation/player_1_TURNR.png').convert_alpha()
+    player_right1 = pygame.image.load('assets/player_animation/player_1_TURNR2.png').convert_alpha()
+    player_right2 = pygame.image.load('assets/player_animation/player_1_TURNR.png').convert_alpha()
     turn_right = [player_right1, player_right2]
     turn_right_counter = 0
     player_coll = player.get_rect(topleft=(50, 150))
-    HUD = pygame.image.load('asset/HUD.png').convert_alpha()
+    HUD = pygame.image.load('assets/HUD.png').convert_alpha()
 
     # Radar animation
-    radar_frames = [pygame.image.load(f'asset/radar/frame_91 ({i}).png') for i in range(1, 92)]
+    radar_frames = [pygame.image.load(f'assets/radar/frame_91 ({i}).png') for i in range(1, 92)]
     radar_frame_counter = 0
 
     # Clouds
-    cloud_1 = pygame.image.load('asset/cloud1.png').convert_alpha()
+    cloud_1 = pygame.image.load('assets/cloud1.png').convert_alpha()
     cloud_1_rect = cloud_1.get_rect(center=(1400, 100))
 
-    cloud_2 = pygame.image.load('asset/cloud4.png').convert_alpha()
+    cloud_2 = pygame.image.load('assets/cloud4.png').convert_alpha()
     cloud2_x_pos = 1200
 
     # Game Loop
