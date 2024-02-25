@@ -53,11 +53,7 @@
              "normal_image": {
                  "path": "assets/mute.png",
                  "sub_surface_rect": "0,0,0,0"
-             },
-                "selected_image": {
-                    "path": "assets/mute2.png",
-                    "sub_surface_rect": "0,0,0,0"
-                }
+             }
 
          },
 

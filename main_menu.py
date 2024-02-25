@@ -17,7 +17,7 @@ def main_menu():
     button_click = pygame.mixer.Sound('assets/sounds/uav_targeting.wav')
     button_click.set_volume(0.2)
     menu_background = pygame.image.load('assets/menu.png').convert_alpha()
-    launch_b = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((460, 90), (250, 160)), text='',
+    launch_b = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((450, 90), (250, 160)), text='',
                                             manager=launch_button_manager)
 
     mute_b = pygame_gui.elements.UIButton(relative_rect=pygame.Rect((20, 10), (44, 44)),
