@@ -9,7 +9,7 @@ def gui_loop():
 
 
     # Game Font
-    font = pygame.font.Font('assets/TarrgetAcademyItalic-qzmx.otf', 65)
+    #font = pygame.font.Font('assets/TarrgetAcademyItalic-qzmx.otf', 65)
     # Rendered layers.
     background = pygame.image.load('assets/bg32.png').convert_alpha()
     bg_scroll = 0

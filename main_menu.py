@@ -6,8 +6,8 @@ pygame.init()
 
 def main_menu():
     window = window_specs.Window()
-    launch_button_manager = pygame_gui.UIManager((800, 600), 'assets/buttoncfg.json')
-    settings_manager = pygame_gui.UIManager((800, 600), 'assets/settings_button.json')
+    launch_button_manager = pygame_gui.UIManager((800, 600), 'assets/buttons/launch_button.json')
+    settings_manager = pygame_gui.UIManager((800, 600), 'assets/buttons/settings_button.json')
     # menu music
     pygame.mixer.init()
     pygame.mixer.music.load('assets/sounds/menu.mp3')
