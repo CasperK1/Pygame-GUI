@@ -26,7 +26,7 @@
          }
      },
 
-     "mute":
+     "save":
      {
          "colours":
          {
@@ -51,7 +51,7 @@
          "images":
          {
              "normal_image": {
-                 "path": "assets/buttons/mute.png",
+                 "path": "assets/buttons/save_menu.png",
                  "sub_surface_rect": "0,0,0,0"
              }
 
